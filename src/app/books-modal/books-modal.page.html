@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-button slot="end" (click)="closeModal()">
+        Cerrar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center">
+    <p><img  id="img_autor" src="{{author.photo}}" /></p>
+    <p><span>{{author.name}}</span></p>
+    <ion-list style="margin:50px 0px;">
+      <ion-item *ngFor="let book of books">
+        <ion-label>{{book.name}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

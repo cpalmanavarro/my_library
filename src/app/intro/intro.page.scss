@@ -1,0 +1,38 @@
+ion-content {
+    --background: blue;
+  }
+  
+  ion-slides {
+    background-color: red;
+    height: 100%;
+    max-width: 800px;
+    --bullet-background-active: red;
+  }
+  .swiper-slide {
+    display: block;
+    background-color: #50c8ff;
+    padding: 20px 0px 20px 0px;
+  }
+  
+  ion-slide > h1,h2 {
+    color: var(--color-titulos);
+  }
+  
+  ion-slide > p {
+    font-style: italic;
+    font-size: 22px;
+    // border: solid;
+    color: #535353;
+    border: 1px solid #dbdbdb;
+    padding: 20px 20px 20px 20px;
+    margin: 20px 20px 20px 20px;
+  }
+  
+  ion-slide > ion-icon[name="close"] {
+    float: right;
+    color: var(--color-titulos);
+    font-size: 40px;
+    border: 1px solid var(--color-titulos);
+    margin-right: 5px;
+  }
+  

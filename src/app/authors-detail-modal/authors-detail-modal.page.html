@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">Cerrar</ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center">
+    <h1 class="ion-text-center">{{author.name}}</h1>
+    <img id="img_author" src="{{author.photo}}" class="cover ion-text-center"/>
+    <br>
+    <p><b>Popularidad :</b> {{author.popularity}}</p>
+  </div>
+
+</ion-content>

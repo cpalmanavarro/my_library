@@ -1,0 +1,47 @@
+<ion-content>
+  <div class="ion-text-center" id="div_imagen">
+    <figure >
+      <img id="img_login" src="https://previews.123rf.com/images/glopphy/glopphy1412/glopphy141200007/34198231-ilustraci%C3%B3n-libro-icono-de-dise%C3%B1o-de-la-plantilla-vector-logo.jpg" alt="">
+    </figure>
+    <h4>Biblioteca Capital</h4>
+  </div>
+<br>
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+
+    <ion-item fill="solid">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email"></ion-input>
+    </ion-item>
+    <div>
+      <ng-container *ngFor="let validation of validation_message.email">
+        <div *ngIf="
+    loginForm.get('email')?.hasError(validation.type) && 
+    (loginForm.get('email')?.dirty || 
+    loginForm.get('email')?.touched)
+    ">
+          {{validation.message}}
+        </div>
+      </ng-container>
+    </div>
+    <ion-item fill="solid">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input formControlName="password" type="password"></ion-input>
+    </ion-item>
+    <br>
+    <br>
+      <div class="ion-text-center" id="div_imagen">
+        <ion-button shape="round" color="primary" [disabled]="!loginForm.valid" type="submit">
+          Login
+        </ion-button>
+        <ion-button shape="round" color="primary" (click)="ir_registro()">
+          Registro
+        </ion-button>
+      </div>
+
+  </form>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-footer>

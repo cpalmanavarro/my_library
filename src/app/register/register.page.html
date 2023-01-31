@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-button (click)="goToLogin()">
+        Back
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center" id="div_imagen">
+    <figure>
+      <img id="img_login"
+        src="https://previews.123rf.com/images/glopphy/glopphy1412/glopphy141200007/34198231-ilustraci%C3%B3n-libro-icono-de-dise%C3%B1o-de-la-plantilla-vector-logo.jpg"
+        alt="">
+    </figure>
+    <h4>Biblioteca Capital</h4>
+  </div>
+  <br>
+  <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)">
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input placeholder="Enter text" formControlName="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Apellido</ion-label>
+      <ion-input placeholder="Enter text" formControlName="last_name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-select formControlName="document_type" placeholder="Tipo Documento">
+        <ion-select-option *ngFor="let tipo of tipos_documentos"
+          value="{{tipo.id}}">{{tipo.descripcion}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Numero documento</ion-label>
+      <ion-input placeholder="Enter text" formControlName="document_number"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Carrera</ion-label>
+      <ion-input placeholder="Enter text" formControlName="career"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input placeholder="Enter text" formControlName="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input placeholder="Enter text" type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <br>
+    <div class="ion-text-center" id="div_imagen">
+      <ion-button shape="round" color="primary" type="submit">
+        Registrarse
+      </ion-button>
+    </div>
+
+    <br>
+  </form>
+
+
+</ion-content>
