@@ -14,7 +14,7 @@
 
   <ion-list>
 
-    <ion-item *ngFor="let libro of top_libros">
+    <ion-item *ngFor="let libro of top_libros"  (click)="showBook(libro)">
       <ion-label>{{libro.name}}</ion-label>
     </ion-item>
 

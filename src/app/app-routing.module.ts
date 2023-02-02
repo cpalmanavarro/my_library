@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { IntroGuard } from './guards/intro.guard';
 import { LoginGuard } from './guards/login.guard';
+import { ValidarGuard } from './guards/validar.guard';
 
 const routes: Routes = [
   {
@@ -11,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'intro',
-    loadChildren: () => import('./intro/intro.module').then( m => m.IntroPageModule)
+    loadChildren: () => import('./intro/intro.module').then( m => m.IntroPageModule), canActivate: [ValidarGuard]
   },
   {
     path: 'login',

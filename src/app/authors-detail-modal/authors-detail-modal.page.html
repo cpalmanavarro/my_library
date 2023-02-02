@@ -13,7 +13,10 @@
     <h1 class="ion-text-center">{{author.name}}</h1>
     <img id="img_author" src="{{author.photo}}" class="cover ion-text-center"/>
     <br>
+    <p><b>Codigo : </b>{{author.id}}</p>
     <p><b>Popularidad :</b> {{author.popularity}}</p>
+    <p><b>Followers :</b> {{author.followers}}</p>
   </div>
 
+  <ion-badge *ngFor="let gender of author.genres" class="ion-margin">{{gender}}</ion-badge>
 </ion-content>

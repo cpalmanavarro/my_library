@@ -50,11 +50,26 @@
       <ion-label position="floating">Email</ion-label>
       <ion-input placeholder="Enter text" formControlName="email"></ion-input>
     </ion-item>
-
+    <ng-container *ngFor="let validation of validation_message.email">
+      <div class="ion-text-center danger" *ngIf=" registerForm.get('email')?.hasError(validation.type) && 
+                    (registerForm.get('email')?.dirty || 
+                    registerForm.get('email')?.touched)
+                    ">
+        {{validation.message}}
+      </div>
+    </ng-container>
     <ion-item>
       <ion-label position="floating">Contraseña</ion-label>
       <ion-input placeholder="Enter text" type="password" formControlName="password"></ion-input>
     </ion-item>
+    <ng-container *ngFor="let validation of validation_message.password">
+      <div class="ion-text-center danger" *ngIf=" registerForm.get('password')?.hasError(validation.type) && 
+                    (registerForm.get('password')?.dirty || 
+                    registerForm.get('password')?.touched)
+                    ">
+        {{validation.message}}
+      </div>
+    </ng-container>
     <br>
     <div class="ion-text-center" id="div_imagen">
       <ion-button shape="round" color="primary" type="submit">
